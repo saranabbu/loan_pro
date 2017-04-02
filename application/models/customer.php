@@ -78,10 +78,7 @@ class Customer extends Person {
         $this->db->from('customers');
         $this->db->select('customers.*');
         $this->db->select('people.*');
-        $this->db->select('financial_status.financial_status_id');
-        $this->db->select('financial_status.income_sources');
         $this->db->join('people', 'people.person_id = customers.person_id');
-        $this->db->join('financial_status', 'financial_status.person_id = people.person_id', 'LEFT');
         $this->db->where('customers.person_id', $customer_id);
         $query = $this->db->get();
 
@@ -317,7 +314,7 @@ class Customer extends Person {
         $by_name = $this->db->get();
         foreach ($by_name->result() as $row)
         {
-            $suggestions[] = $row->person_id . '|' . $row->first_name . ' ' . $row->last_name . '|' . $row->email;
+            $suggestions[] = $row->person_id . '|'.$row->phone_number.' '. $row->first_name . ' ' . $row->last_name;
         }
 
         $this->db->from('customers');
@@ -328,7 +325,7 @@ class Customer extends Person {
         $by_account_number = $this->db->get();
         foreach ($by_account_number->result() as $row)
         {
-            $suggestions[] = $row->person_id . '|' . $row->account_number . '|' . $row->email;
+            $suggestions[] = $row->person_id . '|'. $row->phone_number.' '.  $row->account_number ;
         }
 
         //only return $limit suggestions
