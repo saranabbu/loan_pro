@@ -81,10 +81,12 @@
                     'name' => 'cus_age',
                     'id' => 'cus_age',
                     'value' => $person_info->age,
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+					'type' => 'number'
                 )
         );
         ?>
+	
     </div>
 </div>
 <div class="hr-line-dashed"></div>
@@ -96,7 +98,8 @@
                     'name' => 'id_card',
                     'id' => 'id_card',
                     'value' => $person_info->id_card,
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+					'type' => 'number'
                 )
         );
         ?>
@@ -131,7 +134,8 @@
                     'name' => 'phone_number',
                     'id' => 'phone_number',
                     'value' => $person_info->phone_number,
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+					'type' => 'number'
                 )
         );
         ?>
@@ -212,7 +216,8 @@
                     'name' => 'zip',
                     'id' => 'zip',
                     'value' => $person_info->zip,
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+					'type' => 'number'
                 )
         );
         ?>
